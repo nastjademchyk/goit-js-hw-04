@@ -1,7 +1,33 @@
-function getShippingMessage(country, price, deliveryFee) {
-    const totalPrice = price+deliveryFee;
-    return `Shipping to ${country} will cost ${totalPrice} credits`;
+function calcAverageCalories(days) {
+    let totalAverage = 0; 
+    for (const calory of days) {
+        totalAverage += calory.calories;
+    }
+    return totalAverage / 7; 
 }
-console.log(getShippingMessage("Australia", 120, 50)); 
-console.log(getShippingMessage("Germany", 80, 20));
-console.log(getShippingMessage("Sweden", 100, 20));
+
+console.log(
+  calcAverageCalories([
+    { day: 'monday', calories: 3010 },
+    { day: 'tuesday', calories: 3200 },
+    { day: 'wednesday', calories: 3120 },
+    { day: 'thursday', calories: 2900 },
+    { day: 'friday', calories: 3450 },
+    { day: 'saturday', calories: 3280 },
+    { day: 'sunday', calories: 3300 },
+  ])
+);
+
+console.log(
+  calcAverageCalories([
+    { day: 'monday', calories: 2040 },
+    { day: 'tuesday', calories: 2270 },
+    { day: 'wednesday', calories: 2420 },
+    { day: 'thursday', calories: 1900 },
+    { day: 'friday', calories: 2370 },
+    { day: 'saturday', calories: 2280 },
+    { day: 'sunday', calories: 2610 },
+  ])
+);
+
+console.log(calcAverageCalories([])); 
